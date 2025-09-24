@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search - Eco Harmony</title>
+    <meta name="description" content="Search through our collection of sustainable living tips and eco-friendly practices.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="/styles/input.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234CAF50'/><path d='M30 70 Q50 20 70 70' stroke='white' stroke-width='3' fill='none'/></svg>">
+</head>
+<body class="bg-gradient-warm min-h-screen">
+    <!-- Navigation -->
+    <nav class="backdrop-organic border-b border-soft-sage/20 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-organic flex items-center justify-center shadow-leaf">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <a href="/" class="text-xl font-heading font-bold text-gradient-organic hover:opacity-80 transition-opacity duration-200">Eco Harmony</a>
+                        <p class="text-tiny text-soft-sage-dark">Sustainable Living Tips</p>
+                    </div>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="/" class="text-leaf-green-dark hover:text-leaf-green transition-colors duration-200">Home</a>
+                    <a href="/about" class="text-leaf-green-dark hover:text-leaf-green transition-colors duration-200">About</a>
+                    <a href="/search" class="text-leaf-green font-medium">Search</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Header -->
+    <section class="py-12 bg-gradient-to-br from-warm-sand via-white to-soft-sage-light">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h1 class="text-h1 font-heading mb-6 text-leaf-green-dark">
+                    Find Your Perfect <span class="text-gradient-organic">Sustainable Tip</span>
+                </h1>
+                <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+                    Search through our curated collection of expert-verified sustainable living practices
+                </p>
+                
+                <!-- Advanced Search Form -->
+                <div class="card p-8 max-w-2xl mx-auto">
+                    <div class="space-y-6">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="main-search" 
+                                placeholder="Search tips, categories, or keywords..." 
+                                class="input-eco text-lg pl-12 pr-4 h-14"
+                                autocomplete="off"
+                            >
+                            <svg class="w-6 h-6 text-soft-sage absolute left-4 top-1/2 transform -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-leaf-green-dark mb-2">Category</label>
+                                <select id="category-filter" class="input-eco">
+                                    <option value="">All Categories</option>
+                                    <option value="waste-reduction">Waste Reduction</option>
+                                    <option value="energy">Energy</option>
+                                    <option value="water-conservation">Water Conservation</option>
+                                    <option value="transportation">Transportation</option>
+                                    <option value="biodiversity">Biodiversity</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-leaf-green-dark mb-2">Difficulty</label>
+                                <select id="difficulty-filter" class="input-eco">
+                                    <option value="">Any Difficulty</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-leaf-green-dark mb-2">Impact</label>
+                                <select id="impact-filter" class="input-eco">
+                                    <option value="">Any Impact</option>
+                                    <option value="very-high">Very High</option>
+                                    <option value="high">High</option>
+                                    <option value="medium">Medium</option>
+                                    <option value="low">Low</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                            <button onclick="performSearch()" class="btn-primary px-8 py-3">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                                Search
+                            </button>
+                            <button onclick="clearFilters()" class="btn-secondary px-8 py-3">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                                </svg>
+                                Clear
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Results -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <!-- Results Header -->
+            <div id="results-header" class="mb-8 hidden">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-h2 font-heading text-leaf-green-dark">Search Results</h2>
+                    <span id="results-count" class="text-gray-600"></span>
+                </div>
+                <div id="active-filters" class="mt-4 flex flex-wrap gap-2"></div>
+            </div>
+            
+            <!-- Loading State -->
+            <div id="search-loading" class="hidden text-center py-12">
+                <div class="inline-block w-12 h-12 border-4 border-soft-sage border-t-leaf-green rounded-full animate-spin"></div>
+                <p class="mt-4 text-soft-sage-dark">Searching sustainable tips...</p>
+            </div>
+            
+            <!-- Results Grid -->
+            <div id="search-results" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Results will be loaded here -->
+            </div>
+            
+            <!-- No Results -->
+            <div id="no-search-results" class="hidden text-center py-20">
+                <div class="max-w-md mx-auto">
+                    <svg class="w-16 h-16 text-soft-sage mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                    <h3 class="text-xl font-heading font-semibold text-leaf-green-dark mb-2">No Results Found</h3>
+                    <p class="text-gray-600 mb-6">Try adjusting your search terms or filters to find what you're looking for.</p>
+                    <button onclick="clearFilters()" class="btn-primary">Clear All Filters</button>
+                </div>
+            </div>
+            
+            <!-- Default State -->
+            <div id="search-default" class="text-center py-20">
+                <div class="max-w-md mx-auto">
+                    <div class="w-20 h-20 mx-auto mb-6 bg-gradient-organic rounded-full flex items-center justify-center">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-heading font-semibold text-leaf-green-dark mb-2">Start Your Search</h3>
+                    <p class="text-gray-600 mb-6">Enter keywords or use the filters above to find sustainable living tips that match your needs.</p>
+                    <p class="text-sm text-gray-500">💡 Try searching for "composting", "solar", or "zero waste"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Popular Searches -->
+    <section class="py-16 bg-gradient-to-b from-warm-sand-light to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-h2 font-heading mb-4 text-leaf-green-dark">Popular Searches</h2>
+                <p class="text-lg text-gray-600">Quick links to commonly searched sustainability topics</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
+                <button onclick="quickSearch('composting')" class="btn-secondary">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                    </svg>
+                    Composting
+                </button>
+                <button onclick="quickSearch('solar energy')" class="btn-secondary">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    Solar Energy
+                </button>
+                <button onclick="quickSearch('zero waste')" class="btn-secondary">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+                    </svg>
+                    Zero Waste
+                </button>
+                <button onclick="quickSearch('water conservation')" class="btn-secondary">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4 4 4 0 004-4V5z"></path>
+                    </svg>
+                    Water Conservation
+                </button>
+                <button onclick="quickSearch('renewable energy')" class="btn-secondary">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    Renewable Energy
+                </button>
+                <button onclick="quickSearch('electric vehicles')" class="btn-secondary">
+                    <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                    </svg>
+                    Electric Vehicles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-leaf-green-dark text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-heading font-bold">Eco Harmony</h3>
+                    </div>
+                    <p class="text-white mb-6 max-w-md">
+                        Empowering individuals to make sustainable choices that benefit both personal well-being and planetary health.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-white">
+                        <li><a href="/" class="hover:text-white/80 transition-colors duration-200">All Tips</a></li>
+                        <li><a href="/about" class="hover:text-white/80 transition-colors duration-200">About Us</a></li>
+                        <li><a href="/search" class="hover:text-white/80 transition-colors duration-200">Search</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-heading font-semibold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-white">
+                        <li><a href="/category/waste-reduction" class="hover:text-white/80 transition-colors duration-200">Waste Reduction</a></li>
+                        <li><a href="/category/energy" class="hover:text-white/80 transition-colors duration-200">Energy</a></li>
+                        <li><a href="/category/water-conservation" class="hover:text-white/80 transition-colors duration-200">Water Conservation</a></li>
+                        <li><a href="/category/transportation" class="hover:text-white/80 transition-colors duration-200">Transportation</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/20 mt-12 pt-8 text-center text-white/90">
+                <p>&copy; 2024 Eco Harmony. Crafted with care for our planet. 🌱</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/js/search.js"></script>
+    <script>
+        // Initialize search page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSearchPage();
+        });
+    </script>
+</body>
+</html>

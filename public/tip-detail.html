@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="tip-title">Sustainable Living Tip - Eco Harmony</title>
+    <meta name="description" id="tip-description" content="Detailed sustainable living tip with step-by-step implementation guide.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" id="og-title" content="Sustainable Living Tip - Eco Harmony">
+    <meta property="og:description" id="og-description" content="Detailed sustainable living tip with implementation guide.">
+    <meta property="og:type" content="article">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/styles/output.css">
+    <link rel="stylesheet" href="/styles/input.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='45' fill='%234CAF50'/><path d='M30 70 Q50 20 70 70' stroke='white' stroke-width='3' fill='none'/></svg>">
+    
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json" id="structured-data">
+    </script>
+</head>
+<body class="bg-gradient-warm min-h-screen">
+    <!-- Navigation -->
+    <nav class="backdrop-organic border-b border-soft-sage/20 sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gradient-organic flex items-center justify-center shadow-leaf">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 2L3 7v11a1 1 0 001 1h12a1 1 0 001-1V7l-7-5z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <a href="/" class="text-xl font-heading font-bold text-gradient-organic hover:opacity-80 transition-opacity duration-200">Eco Harmony</a>
+                        <p class="text-tiny text-soft-sage-dark">Sustainable Living Tips</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-4">
+                    <a href="/" class="text-leaf-green-dark hover:text-leaf-green transition-colors duration-200 flex items-center">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+                        </svg>
+                        Back to Tips
+                    </a>
+                    <button onclick="shareTip()" class="btn-secondary px-4 py-2 text-sm">
+                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"></path>
+                        </svg>
+                        Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Loading State -->
+    <div id="loading" class="flex items-center justify-center min-h-[60vh]">
+        <div class="text-center">
+            <div class="inline-block w-12 h-12 border-4 border-soft-sage border-t-leaf-green rounded-full animate-spin"></div>
+            <p class="mt-4 text-soft-sage-dark">Loading tip details...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="tip-content" class="hidden">
+        <!-- Hero Section -->
+        <section class="py-12 bg-gradient-to-br from-warm-sand via-white to-soft-sage-light">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Breadcrumb -->
+                    <nav class="mb-8" aria-label="Breadcrumb">
+                        <ol class="flex items-center space-x-2 text-sm text-gray-600">
+                            <li><a href="/" class="hover:text-leaf-green transition-colors duration-200">Home</a></li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span id="breadcrumb-category">Tips</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                                <span class="text-leaf-green-dark" id="breadcrumb-title">Current Tip</span>
+                            </li>
+                        </ol>
+                    </nav>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Main Content -->
+                        <div class="lg:col-span-2">
+                            <div class="flex items-start justify-between mb-6">
+                                <div>
+                                    <div class="flex items-center space-x-3 mb-4">
+                                        <span id="category-badge" class="badge-primary"></span>
+                                        <span id="impact-badge" class="badge-secondary"></span>
+                                    </div>
+                                    <h1 id="tip-heading" class="text-h1 font-heading mb-4 text-leaf-green-dark animate-fade-in-up"></h1>
+                                    <div class="flex items-center space-x-6 text-sm text-gray-600 mb-6">
+                                        <span class="flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                            </svg>
+                                            <span id="tip-author">Author</span>
+                                        </span>
+                                        <span class="flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            <span id="read-time">5 min read</span>
+                                        </span>
+                                        <span class="flex items-center">
+                                            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                            </svg>
+                                            <span id="publish-date">Recent</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="prose prose-lg max-w-none">
+                                <img id="tip-image" class="w-full h-80 object-cover rounded-leaf shadow-gentle mb-8" src="" alt="" loading="lazy">
+                                <p id="tip-full-description" class="text-lg text-gray-700 leading-relaxed mb-8"></p>
+                            </div>
+                        </div>
+
+                        <!-- Sidebar -->
+                        <div class="lg:col-span-1">
+                            <div class="sticky top-24 space-y-6">
+                                <!-- Impact Stats -->
+                                <div class="card p-6">
+                                    <h3 class="font-heading font-semibold text-leaf-green-dark mb-4">Impact Overview</h3>
+                                    <div class="space-y-4">
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm text-gray-600">Difficulty</span>
+                                            <span id="difficulty-level" class="font-medium"></span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm text-gray-600">Setup Time</span>
+                                            <span id="setup-time" class="font-medium"></span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm text-gray-600">Annual Savings</span>
+                                            <span id="cost-savings" class="font-medium text-leaf-green"></span>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <span class="text-sm text-gray-600">CO₂ Reduction</span>
+                                            <span id="carbon-reduction" class="font-medium text-leaf-green"></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Quick Actions -->
+                                <div class="card p-6">
+                                    <h3 class="font-heading font-semibold text-leaf-green-dark mb-4">Quick Actions</h3>
+                                    <div class="space-y-3">
+                                        <button onclick="addToFavorites()" class="btn-secondary w-full justify-center">
+                                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                                            </svg>
+                                            Save to Favorites
+                                        </button>
+                                        <button onclick="markAsImplemented()" class="btn-primary w-full justify-center">
+                                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                            Mark as Done
+                                        </button>
+                                        <button onclick="printTip()" class="btn-secondary w-full justify-center">
+                                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+                                            </svg>
+                                            Print Guide
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Tags -->
+                                <div class="card p-6">
+                                    <h3 class="font-heading font-semibold text-leaf-green-dark mb-4">Related Topics</h3>
+                                    <div id="tip-tags" class="flex flex-wrap gap-2">
+                                        <!-- Tags will be loaded here -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Guide -->
+        <section class="py-16 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Steps -->
+                    <div class="card p-8">
+                        <h2 class="text-h2 font-heading mb-6 text-leaf-green-dark flex items-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                            </svg>
+                            Implementation Steps
+                        </h2>
+                        <ol id="implementation-steps" class="space-y-4">
+                            <!-- Steps will be loaded here -->
+                        </ol>
+                    </div>
+
+                    <!-- Benefits -->
+                    <div class="card p-8">
+                        <h2 class="text-h2 font-heading mb-6 text-leaf-green-dark flex items-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Key Benefits
+                        </h2>
+                        <ul id="tip-benefits" class="space-y-3">
+                            <!-- Benefits will be loaded here -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pro Tips -->
+                <div class="max-w-4xl mx-auto mt-12">
+                    <div class="card p-8 bg-gradient-sage">
+                        <h2 class="text-h2 font-heading mb-6 text-leaf-green-dark flex items-center">
+                            <svg class="w-6 h-6 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                            </svg>
+                            Pro Tips
+                        </h2>
+                        <div id="pro-tips" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Pro tips will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tips -->
+        <section class="py-16 bg-gradient-to-b from-warm-sand-light to-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-6xl mx-auto">
+                    <h2 class="text-h2 font-heading text-center mb-12 text-leaf-green-dark">Related Tips</h2>
+                    <div id="related-tips" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Related tips will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Share Modal -->
+    <div id="share-modal" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden z-50">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="card max-w-md w-full p-8 animate-fade-in-up">
+                <div class="flex justify-between items-center mb-6">
+                    <h3 class="text-xl font-heading font-semibold text-leaf-green-dark">Share This Tip</h3>
+                    <button onclick="closeShareModal()" class="text-gray-400 hover:text-gray-600 transition-colors duration-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="space-y-4">
+                    <button onclick="shareToTwitter()" class="w-full btn-secondary justify-start">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+                        Share on Twitter
+                    </button>
+                    <button onclick="shareToFacebook()" class="w-full btn-secondary justify-start">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        Share on Facebook
+                    </button>
+                    <button onclick="copyToClipboard()" class="w-full btn-secondary justify-start">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                        </svg>
+                        Copy Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/tip-detail.js"></script>
+    <script>
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            const tipId = window.location.pathname.split('/')[2];
+            if (tipId) {
+                loadTipDetail(tipId);
+            } else {
+                window.location.href = '/';
+            }
+        });
+    </script>
+</body>
+</html>
