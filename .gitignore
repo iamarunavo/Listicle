@@ -6,6 +6,44 @@ yarn-error.log*
 lerna-debug.log*
 .pnpm-debug.log*
 
+# Environment variables and secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.staging
+.env.example
+config.json
+secrets.json
+credentials.json
+
+# Database files and configuration
+*.db
+*.sqlite
+*.sqlite3
+database.json
+db.json
+*.sql
+dbconfig.js
+database.config.js
+
+# API keys and authentication
+api-keys.json
+auth.json
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+jwt-secret.txt
+
+# Configuration files that might contain secrets
+config/production.json
+config/local.json
+config/database.js
+config/secrets.js
+
 # Runtime data
 pids
 *.pid
