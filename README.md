@@ -12,7 +12,7 @@ This repository contains two WEB103 projects based on the same app idea.
 
 About this web app: **A simple web app showing list items with details, styled with PicoCSS.**
 
-Time spent: **X hours**
+Time spent: **5 hours**
 
 ## Required Features
 - [x] The web app uses only HTML, CSS, and JavaScript without a frontend framework  
