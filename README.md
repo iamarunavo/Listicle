@@ -1,53 +1,74 @@
-# WEB103 Project 2 - *EcoHamrmony (Listicle Part 2)*
+# EcoHarmony - WEB103 Projects
 
 Submitted by: **Arunavo Chowdhury**
 
-About this web app: **A simple web app showing sustainable living tips.**
+This repository contains two WEB103 projects based on the same app idea.  
+- **Project 1:** Static List App (HTML, CSS, JavaScript only)  
+- **Project 2:** Database-Connected App (PostgreSQL integration)  
 
-Time spent: **X=4** hours
+---
+
+# Project 1 - Listicle Part 1
+
+About this web app: **A simple web app showing list items with details, styled with PicoCSS.**
+
+Time spent: **X hours**
 
 ## Required Features
+- [x] The web app uses only HTML, CSS, and JavaScript without a frontend framework  
+- [x] The web app displays a title  
+- [x] The web app displays at least five unique list items, each with at least three displayed attributes (title, text, image)  
+- [x] The user can click on each item in the list to see a detailed view of it, including all database fields  
+  - [x] Each detail view has a unique endpoint (e.g. `/bosses/crystalguardian`)  
+- [x] The web app serves a 404 page for undefined routes  
+- [x] The web app is styled using PicoCSS  
 
-The following **required** functionality is completed:
+## Optional Features
+- [x] Unique format for displaying items (e.g., cards, animations)  
 
-<!-- Make sure to check off completed functionality below -->
-- [x] **The web app uses only HTML, CSS, and JavaScript without a frontend framework**
-- [x] **The web app is connected to a PostgreSQL database, with an appropriately structured database table for the list items**
-  - [x] **NOTE: Your walkthrough added to the README must include a view of your Render dashboard demonstrating that your Postgres database is available**
-  - [x]  **NOTE: Your walkthrough added to the README must include a demonstration of your table contents. Use the psql command 'SELECT * FROM tablename;' to display your table contents.**
-
-
-The following **optional** features are implemented:
-
-- [ ] The user can search for items by a specific attribute
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you added to improve the site's functionality!
+## Additional Features
+- [ ] Any other improvements  
 
 ## Video Walkthrough
+<img src='https://i.imgur.com/iO1vlAk.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
-Here's a walkthrough of implemented required features:
+GIF created with ScreenToGif 
 
-<img src='https://i.imgur.com/SsQwham.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+---
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ScreenToGif
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+# Project 2 - Listicle Part 2
 
-## Notes
+About this web app: **A simple web app showing sustainable living tips with PostgreSQL integration.**
 
-Describe any challenges encountered while building the app or any additional context you'd like to add.
+Time spent: **4 hours**
 
-## License
+## Required Features
+- [x] The web app uses only HTML, CSS, and JavaScript without a frontend framework  
+- [x] The web app is connected to a PostgreSQL database, with a structured table for list items  
+  - [x] Walkthrough includes Render dashboard view of Postgres database availability  
+  - [x] Walkthrough includes demonstration of table contents using `SELECT * FROM tablename;`  
 
-Copyright [2025] [Arunavo Chowdhury]
+## Optional Features
+- [ ] The user can search for items by a specific attribute  
 
-Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
+## Additional Features
+- [ ] Any other improvements  
 
-> http://www.apache.org/licenses/LICENSE-2.0
+## Video Walkthrough
+<img src='https://i.imgur.com/SsQwham.gif' title='Video Walkthrough' alt='Video Walkthrough' />
 
-Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+GIF created with ScreenToGif  
+
+---
+
+# Notes
+Describe any challenges encountered while building either part of the app or any additional context.  
+
+---
+
+# License
+Copyright [2025] [Arunavo Chowdhury]  
+
+Licensed under the Apache License, Version 2.0 (the "License");  
+http://www.apache.org/licenses/LICENSE-2.0  
+
